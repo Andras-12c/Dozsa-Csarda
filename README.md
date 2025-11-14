@@ -1,1 +1,1 @@
-'Online ‚lelmiszer rendel‚s csomagokban'
+'Online Ã©lelmiszer rendelÃ©s csomagokban'
