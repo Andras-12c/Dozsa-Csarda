@@ -1,0 +1,65 @@
+-- FELHASZNÁLÓ
+CREATE TABLE felhasznalo (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    felhasznalonev VARCHAR(100) NOT NULL,
+    jelszo VARCHAR(255) NOT NULL,
+    email VARCHAR(150) NOT NULL,
+    jogosultsag VARCHAR(50),
+    lakcim VARCHAR(255)
+);
+
+-- FŐÉTEL
+CREATE TABLE foetel (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    foetel VARCHAR(100) NOT NULL,
+    meret VARCHAR(50),
+    ar INT NOT NULL
+);
+
+-- KÖRET
+CREATE TABLE koret (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    koret VARCHAR(100) NOT NULL,
+    meret VARCHAR(50),
+    ar INT NOT NULL
+);
+
+-- SZÓSZ
+CREATE TABLE szosz (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    szosz VARCHAR(100) NOT NULL,
+    ar INT NOT NULL
+);
+
+-- ÜDÍTŐ
+CREATE TABLE udeto (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    udeto VARCHAR(100) NOT NULL,
+    meret VARCHAR(50),
+    ar INT NOT NULL
+);
+
+-- DESSZERT
+CREATE TABLE desszert (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    desszert VARCHAR(100) NOT NULL,
+    ar INT NOT NULL
+);
+
+-- RENDELÉS
+CREATE TABLE rendeles (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    fel_id INT NOT NULL,
+    foetel_id INT,
+    koret_id INT,
+    szosz_id INT,
+    udeto_id INT,
+    desszert_id INT,
+
+    FOREIGN KEY (fel_id) REFERENCES felhasznalo(id),
+    FOREIGN KEY (foetel_id) REFERENCES foetel(id),
+    FOREIGN KEY (koret_id) REFERENCES koret(id),
+    FOREIGN KEY (szosz_id) REFERENCES szosz(id),
+    FOREIGN KEY (udeto_id) REFERENCES udeto(id),
+    FOREIGN KEY (desszert_id) REFERENCES desszert(id)
+);
