@@ -1,1 +1,1 @@
-'Online élelmiszer rendelés csomagokban'
+'Online élelmiszer rendelés személyre szabható menükkel'
